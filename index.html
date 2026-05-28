@@ -229,23 +229,49 @@
     .feature p { color: var(--muted); font-size: 0.9rem; }
 
     /* ── PRICING ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
     .pricing-card {
       background: var(--card);
-      border: 1px solid var(--gold);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 48px;
-      max-width: 480px;
-      margin: 0 auto;
+      padding: 40px 32px;
       text-align: center;
+      display: flex;
+      flex-direction: column;
     }
-    .pricing-card .price { font-size: 3.5rem; font-weight: 900; color: var(--gold); }
-    .pricing-card .price span { font-size: 1.2rem; color: var(--muted); font-weight: 400; }
-    .pricing-card .desc { color: var(--muted); margin: 8px 0 32px; }
-    .check-list { list-style: none; text-align: left; margin-bottom: 36px; }
+    .pricing-card.featured {
+      border-color: var(--gold);
+      position: relative;
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .pricing-tier { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; color: var(--muted); margin-bottom: 12px; text-transform: uppercase; }
+    .pricing-card .price { font-size: 3rem; font-weight: 900; color: var(--gold); line-height: 1; }
+    .pricing-card .price span { font-size: 1rem; color: var(--muted); font-weight: 400; }
+    .pricing-card .desc { color: var(--muted); margin: 10px 0 28px; font-size: 0.9rem; }
+    .check-list { list-style: none; text-align: left; margin-bottom: 32px; flex: 1; }
     .check-list li {
       padding: 8px 0;
       border-bottom: 1px solid var(--border);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       display: flex;
       gap: 10px;
     }
@@ -256,14 +282,29 @@
       background: var(--gold);
       color: var(--navy);
       font-weight: 800;
-      font-size: 1.1rem;
-      padding: 16px;
+      font-size: 1rem;
+      padding: 14px;
       border-radius: 10px;
       text-align: center;
       transition: background 0.2s;
+      margin-top: auto;
     }
     .btn-gold-full:hover { background: var(--gold2); }
-    .pricing-note { font-size: 0.8rem; color: var(--muted); margin-top: 16px; }
+    .btn-outline-full {
+      display: block;
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.2s;
+      margin-top: auto;
+    }
+    .btn-outline-full:hover { background: var(--gold); color: var(--navy); }
+    .pricing-note { font-size: 0.78rem; color: var(--muted); margin-top: 14px; }
 
     /* ── FAQ ── */
     .faq-list { max-width: 720px; }
@@ -284,6 +325,9 @@
     }
     footer .logo { font-size: 1.1rem; margin-bottom: 12px; display: block; }
 
+    @media (max-width: 900px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
+    }
     @media (max-width: 600px) {
       nav { padding: 16px 20px; }
       section { padding: 60px 20px; }
@@ -423,26 +467,68 @@
 
 <!-- PRICING -->
 <section id="pricing">
-  <div style="text-align:center; margin-bottom: 48px;">
+  <div style="text-align:center; margin-bottom: 56px;">
     <div class="section-label" style="justify-content:center; display:flex;">Pricing</div>
     <h2 class="section-title">One closed loan pays for 5 years.</h2>
     <p class="section-sub" style="margin: 0 auto;">No setup fees. No long-term contracts. Cancel anytime.</p>
   </div>
-  <div class="pricing-card">
-    <div class="price">$299<span>/month</span></div>
-    <div class="desc">Exclusive territory · 25 leads/day · Cancel anytime</div>
-    <ul class="check-list">
-      <li>25 AI-scored leads delivered every morning</li>
-      <li>Exclusive zip code territory — never shared</li>
-      <li>AI outreach scripts per lead (A & B grades)</li>
-      <li>Google Sheet delivery with skip trace links</li>
-      <li>New leads daily — fully deduplicated</li>
-      <li>Setup within 24 hours of payment</li>
-      <li>First 7 days free — cancel before if not satisfied</li>
-    </ul>
-    <!-- Replace href below with your Stripe Payment Link -->
-    <a href="https://buy.stripe.com/9B63cvaHV2oNfPf0lJ7wA00" class="btn-gold-full">Claim Your Territory →</a>
-    <div class="pricing-note">Secure payment via Stripe · Territories limited · San Antonio, TX only</div>
+  <div class="pricing-grid">
+
+    <!-- TIER A -->
+    <div class="pricing-card" style="position:relative;">
+      <div class="pricing-tier">Tier A — Premium</div>
+      <div class="price">$499<span>/mo</span></div>
+      <div class="desc">Avg home value $350K+ · High-equity territory · 5 exclusive zip codes</div>
+      <ul class="check-list">
+        <li>15 AI-scored leads delivered every morning</li>
+        <li>5 exclusive zip codes — never shared</li>
+        <li>AI outreach scripts (A &amp; B grades)</li>
+        <li>Google Sheet delivery with skip trace links</li>
+        <li>Fully deduplicated — no repeats</li>
+        <li>Setup within 24 hours of payment</li>
+        <li>First 7 days free</li>
+      </ul>
+      <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive%20Tier%20A%20Territory" class="btn-outline-full">Contact to Claim →</a>
+      <div class="pricing-note">Secure payment via Stripe · Limited territories · San Antonio, TX</div>
+    </div>
+
+    <!-- TIER B (featured) -->
+    <div class="pricing-card featured" style="position:relative;">
+      <div class="pricing-badge">MOST POPULAR</div>
+      <div class="pricing-tier">Tier B — Standard</div>
+      <div class="price">$299<span>/mo</span></div>
+      <div class="desc">Avg home value $200–350K · Strong territory · 5 exclusive zip codes</div>
+      <ul class="check-list">
+        <li>15 AI-scored leads delivered every morning</li>
+        <li>5 exclusive zip codes — never shared</li>
+        <li>AI outreach scripts (A &amp; B grades)</li>
+        <li>Google Sheet delivery with skip trace links</li>
+        <li>Fully deduplicated — no repeats</li>
+        <li>Setup within 24 hours of payment</li>
+        <li>First 7 days free</li>
+      </ul>
+      <a href="https://buy.stripe.com/9B63cvaHV2oNfPf0lJ7wA00" class="btn-gold-full">Claim Your Territory →</a>
+      <div class="pricing-note">Secure payment via Stripe · Limited territories · San Antonio, TX</div>
+    </div>
+
+    <!-- TIER C -->
+    <div class="pricing-card" style="position:relative;">
+      <div class="pricing-tier">Tier C — Starter</div>
+      <div class="price">$99<span>/mo</span></div>
+      <div class="desc">Avg home value under $200K · Value territory · 5 exclusive zip codes</div>
+      <ul class="check-list">
+        <li>15 AI-scored leads delivered every morning</li>
+        <li>5 exclusive zip codes — never shared</li>
+        <li>AI outreach scripts (A &amp; B grades)</li>
+        <li>Google Sheet delivery with skip trace links</li>
+        <li>Fully deduplicated — no repeats</li>
+        <li>Setup within 24 hours of payment</li>
+        <li>First 7 days free</li>
+      </ul>
+      <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive%20Tier%20C%20Territory" class="btn-outline-full">Contact to Claim →</a>
+      <div class="pricing-note">Secure payment via Stripe · Limited territories · San Antonio, TX</div>
+    </div>
+
   </div>
 </section>
 
