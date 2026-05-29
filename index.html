@@ -228,6 +228,39 @@
     .feature h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
     .feature p { color: var(--muted); font-size: 0.9rem; }
 
+    /* ── TERRITORY COUNTER ── */
+    .territory-counter {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      background: rgba(37,199,102,0.12);
+      color: #25c766;
+      border: 1px solid rgba(37,199,102,0.25);
+    }
+    .territory-counter::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+    .territory-counter.low {
+      background: rgba(255,140,0,0.12);
+      color: #ff8c00;
+      border-color: rgba(255,140,0,0.25);
+    }
+    .territory-counter.critical {
+      background: rgba(220,50,50,0.12);
+      color: #dc3232;
+      border-color: rgba(220,50,50,0.25);
+    }
+
     /* ── ZIP TOGGLE ── */
     .zip-toggle {
       margin-top: 20px;
@@ -511,6 +544,7 @@
     <!-- TIER A -->
     <div class="pricing-card" style="position:relative;">
       <div class="pricing-tier">Tier A — Premium</div>
+      <div class="territory-counter">8 of 8 territories available</div>
       <div class="price">$499<span>/mo</span></div>
       <div class="desc">Avg home value $350K+ · High-equity territory · 3 exclusive zip codes</div>
       <ul class="check-list">
@@ -545,6 +579,7 @@
     <div class="pricing-card featured" style="position:relative;">
       <div class="pricing-badge">MOST POPULAR</div>
       <div class="pricing-tier">Tier B — Standard</div>
+      <div class="territory-counter">11 of 11 territories available</div>
       <div class="price">$299<span>/mo</span></div>
       <div class="desc">Avg home value $200–350K · Strong territory · 3 exclusive zip codes</div>
       <ul class="check-list">
@@ -581,6 +616,7 @@
     <!-- TIER C -->
     <div class="pricing-card" style="position:relative;">
       <div class="pricing-tier">Tier C — Starter</div>
+      <div class="territory-counter">3 of 3 territories available</div>
       <div class="price">$99<span>/mo</span></div>
       <div class="desc">Avg home value under $200K · Value territory · 3 exclusive zip codes</div>
       <ul class="check-list">
