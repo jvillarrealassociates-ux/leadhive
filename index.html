@@ -309,7 +309,7 @@
     }
     .zip-toggle summary::-webkit-details-marker { display: none; }
     .zip-toggle[open] summary { color: var(--gold); }
-    .zip-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .zip-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
     .zip-chip {
       background: var(--navy2);
       border: 1px solid var(--border);
@@ -320,6 +320,9 @@
       color: var(--text);
       font-family: monospace;
     }
+    .zip-city-section { margin-top: 12px; }
+    .zip-city-section + .zip-city-section { margin-top: 14px; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 14px; }
+    .zip-city-label { font-size: 0.7rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 6px; }
 
     /* ── PRICING GRID ── */
     .pricing-grid {
@@ -614,19 +617,29 @@
           <li>First 7 days free</li>
         </ul>
         <a href="https://buy.stripe.com/aFa8wPeYbaVj32tc4r7wA01" class="btn-gold-full">Claim Your Territory →</a>
-        <div class="pricing-note">Secure payment via Stripe · San Antonio, TX</div>
+        <div class="pricing-note">Secure payment via Stripe · San Antonio &amp; Corpus Christi, TX</div>
         <details class="zip-toggle">
           <summary>View available zip codes ▾</summary>
-          <div class="zip-grid">
-            <span class="zip-chip">78257</span><span class="zip-chip">78006</span><span class="zip-chip">78209</span>
-            <span class="zip-chip">78256</span><span class="zip-chip">78015</span><span class="zip-chip">78255</span>
-            <span class="zip-chip">78231</span><span class="zip-chip">78261</span><span class="zip-chip">78260</span>
-            <span class="zip-chip">78258</span><span class="zip-chip">78248</span><span class="zip-chip">78023</span>
-            <span class="zip-chip">78212</span><span class="zip-chip">78259</span><span class="zip-chip">78230</span>
-            <span class="zip-chip">78232</span><span class="zip-chip">78154</span><span class="zip-chip">78263</span>
-            <span class="zip-chip">78253</span><span class="zip-chip">78216</span><span class="zip-chip">78249</span>
-            <span class="zip-chip">78229</span><span class="zip-chip">78205</span><span class="zip-chip">78215</span>
-            <span class="zip-chip">78108</span>
+          <div class="zip-city-section">
+            <div class="zip-city-label">San Antonio · Bexar County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78257</span><span class="zip-chip">78006</span><span class="zip-chip">78209</span>
+              <span class="zip-chip">78256</span><span class="zip-chip">78015</span><span class="zip-chip">78255</span>
+              <span class="zip-chip">78231</span><span class="zip-chip">78261</span><span class="zip-chip">78260</span>
+              <span class="zip-chip">78258</span><span class="zip-chip">78248</span><span class="zip-chip">78023</span>
+              <span class="zip-chip">78212</span><span class="zip-chip">78259</span><span class="zip-chip">78230</span>
+              <span class="zip-chip">78232</span><span class="zip-chip">78154</span><span class="zip-chip">78263</span>
+              <span class="zip-chip">78253</span><span class="zip-chip">78216</span><span class="zip-chip">78249</span>
+              <span class="zip-chip">78229</span><span class="zip-chip">78205</span><span class="zip-chip">78215</span>
+              <span class="zip-chip">78108</span>
+            </div>
+          </div>
+          <div class="zip-city-section">
+            <div class="zip-city-label">Corpus Christi · Nueces County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78418</span><span class="zip-chip">78414</span><span class="zip-chip">78412</span>
+              <span class="zip-chip">78411</span>
+            </div>
           </div>
         </details>
       </div>
@@ -648,22 +661,32 @@
           <li>First 7 days free</li>
         </ul>
         <a href="https://buy.stripe.com/9B63cvaHV2oNfPf0lJ7wA00" class="btn-gold-full">Claim Your Territory →</a>
-        <div class="pricing-note">Secure payment via Stripe · San Antonio, TX</div>
+        <div class="pricing-note">Secure payment via Stripe · San Antonio &amp; Corpus Christi, TX</div>
         <details class="zip-toggle">
           <summary>View available zip codes ▾</summary>
-          <div class="zip-grid">
-            <span class="zip-chip">78254</span><span class="zip-chip">78266</span><span class="zip-chip">78152</span>
-            <span class="zip-chip">78204</span><span class="zip-chip">78240</span><span class="zip-chip">78148</span>
-            <span class="zip-chip">78247</span><span class="zip-chip">78251</span><span class="zip-chip">78217</span>
-            <span class="zip-chip">78213</span><span class="zip-chip">78218</span><span class="zip-chip">78250</span>
-            <span class="zip-chip">78239</span><span class="zip-chip">78264</span><span class="zip-chip">78245</span>
-            <span class="zip-chip">78202</span><span class="zip-chip">78109</span><span class="zip-chip">78210</span>
-            <span class="zip-chip">78208</span><span class="zip-chip">78233</span><span class="zip-chip">78252</span>
-            <span class="zip-chip">78073</span><span class="zip-chip">78201</span><span class="zip-chip">78238</span>
-            <span class="zip-chip">78244</span><span class="zip-chip">78112</span><span class="zip-chip">78002</span>
-            <span class="zip-chip">78203</span><span class="zip-chip">78228</span><span class="zip-chip">78101</span>
-            <span class="zip-chip">78222</span><span class="zip-chip">78069</span><span class="zip-chip">78221</span>
-            <span class="zip-chip">78223</span><span class="zip-chip">78224</span>
+          <div class="zip-city-section">
+            <div class="zip-city-label">San Antonio · Bexar County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78254</span><span class="zip-chip">78266</span><span class="zip-chip">78152</span>
+              <span class="zip-chip">78204</span><span class="zip-chip">78240</span><span class="zip-chip">78148</span>
+              <span class="zip-chip">78247</span><span class="zip-chip">78251</span><span class="zip-chip">78217</span>
+              <span class="zip-chip">78213</span><span class="zip-chip">78218</span><span class="zip-chip">78250</span>
+              <span class="zip-chip">78239</span><span class="zip-chip">78264</span><span class="zip-chip">78245</span>
+              <span class="zip-chip">78202</span><span class="zip-chip">78109</span><span class="zip-chip">78210</span>
+              <span class="zip-chip">78208</span><span class="zip-chip">78233</span><span class="zip-chip">78252</span>
+              <span class="zip-chip">78073</span><span class="zip-chip">78201</span><span class="zip-chip">78238</span>
+              <span class="zip-chip">78244</span><span class="zip-chip">78112</span><span class="zip-chip">78002</span>
+              <span class="zip-chip">78203</span><span class="zip-chip">78228</span><span class="zip-chip">78101</span>
+              <span class="zip-chip">78222</span><span class="zip-chip">78069</span><span class="zip-chip">78221</span>
+              <span class="zip-chip">78223</span><span class="zip-chip">78224</span>
+            </div>
+          </div>
+          <div class="zip-city-section">
+            <div class="zip-city-label">Corpus Christi · Nueces County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78404</span><span class="zip-chip">78405</span><span class="zip-chip">78408</span>
+              <span class="zip-chip">78413</span><span class="zip-chip">78415</span><span class="zip-chip">78416</span>
+            </div>
           </div>
         </details>
       </div>
@@ -684,22 +707,28 @@
           <li>First 7 days free</li>
         </ul>
         <a href="https://buy.stripe.com/28E8wP7vJ4wVauV9Wj7wA02" class="btn-gold-full">Claim Your Territory →</a>
-        <div class="pricing-note">Secure payment via Stripe · San Antonio, TX</div>
+        <div class="pricing-note">Secure payment via Stripe · San Antonio &amp; Corpus Christi, TX</div>
         <details class="zip-toggle">
           <summary>View available zip codes ▾</summary>
-          <div class="zip-grid">
-            <span class="zip-chip">78219</span><span class="zip-chip">78214</span><span class="zip-chip">78220</span>
-            <span class="zip-chip">78211</span><span class="zip-chip">78237</span><span class="zip-chip">78227</span>
-            <span class="zip-chip">78225</span><span class="zip-chip">78242</span><span class="zip-chip">78226</span>
-            <span class="zip-chip">78207</span>
+          <div class="zip-city-section">
+            <div class="zip-city-label">San Antonio · Bexar County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78219</span><span class="zip-chip">78214</span><span class="zip-chip">78220</span>
+              <span class="zip-chip">78211</span><span class="zip-chip">78237</span><span class="zip-chip">78227</span>
+              <span class="zip-chip">78225</span><span class="zip-chip">78242</span><span class="zip-chip">78226</span>
+              <span class="zip-chip">78207</span>
+            </div>
+          </div>
+          <div class="zip-city-section">
+            <div class="zip-city-label">Corpus Christi · Nueces County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78401</span><span class="zip-chip">78402</span><span class="zip-chip">78407</span>
+              <span class="zip-chip">78409</span><span class="zip-chip">78417</span>
+            </div>
           </div>
         </details>
       </div>
 
-    </div>
-    <div class="cc-callout">
-      <p><strong>Also serving Corpus Christi, TX</strong> (Nueces County) — reverse mortgage territories available.</p>
-      <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive - Corpus Christi Reverse Mortgage Territory" class="btn-outline-full" style="width:auto; padding: 10px 20px;">Contact for Availability →</a>
     </div>
   </div>
 
@@ -723,19 +752,29 @@
           <li>First 7 days free</li>
         </ul>
         <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive Real Estate - Tier A Territory" class="btn-gold-full">Claim Your Territory →</a>
-        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
+        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio &amp; Corpus Christi, TX</div>
         <details class="zip-toggle">
           <summary>View available zip codes ▾</summary>
-          <div class="zip-grid">
-            <span class="zip-chip">78257</span><span class="zip-chip">78006</span><span class="zip-chip">78209</span>
-            <span class="zip-chip">78256</span><span class="zip-chip">78015</span><span class="zip-chip">78255</span>
-            <span class="zip-chip">78231</span><span class="zip-chip">78261</span><span class="zip-chip">78260</span>
-            <span class="zip-chip">78258</span><span class="zip-chip">78248</span><span class="zip-chip">78023</span>
-            <span class="zip-chip">78212</span><span class="zip-chip">78259</span><span class="zip-chip">78230</span>
-            <span class="zip-chip">78232</span><span class="zip-chip">78154</span><span class="zip-chip">78263</span>
-            <span class="zip-chip">78253</span><span class="zip-chip">78216</span><span class="zip-chip">78249</span>
-            <span class="zip-chip">78229</span><span class="zip-chip">78205</span><span class="zip-chip">78215</span>
-            <span class="zip-chip">78108</span>
+          <div class="zip-city-section">
+            <div class="zip-city-label">San Antonio · Bexar County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78257</span><span class="zip-chip">78006</span><span class="zip-chip">78209</span>
+              <span class="zip-chip">78256</span><span class="zip-chip">78015</span><span class="zip-chip">78255</span>
+              <span class="zip-chip">78231</span><span class="zip-chip">78261</span><span class="zip-chip">78260</span>
+              <span class="zip-chip">78258</span><span class="zip-chip">78248</span><span class="zip-chip">78023</span>
+              <span class="zip-chip">78212</span><span class="zip-chip">78259</span><span class="zip-chip">78230</span>
+              <span class="zip-chip">78232</span><span class="zip-chip">78154</span><span class="zip-chip">78263</span>
+              <span class="zip-chip">78253</span><span class="zip-chip">78216</span><span class="zip-chip">78249</span>
+              <span class="zip-chip">78229</span><span class="zip-chip">78205</span><span class="zip-chip">78215</span>
+              <span class="zip-chip">78108</span>
+            </div>
+          </div>
+          <div class="zip-city-section">
+            <div class="zip-city-label">Corpus Christi · Nueces County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78418</span><span class="zip-chip">78414</span><span class="zip-chip">78412</span>
+              <span class="zip-chip">78411</span>
+            </div>
           </div>
         </details>
       </div>
@@ -757,22 +796,32 @@
           <li>First 7 days free</li>
         </ul>
         <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive Real Estate - Tier B Territory" class="btn-gold-full">Claim Your Territory →</a>
-        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
+        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio &amp; Corpus Christi, TX</div>
         <details class="zip-toggle">
           <summary>View available zip codes ▾</summary>
-          <div class="zip-grid">
-            <span class="zip-chip">78254</span><span class="zip-chip">78266</span><span class="zip-chip">78152</span>
-            <span class="zip-chip">78204</span><span class="zip-chip">78240</span><span class="zip-chip">78148</span>
-            <span class="zip-chip">78247</span><span class="zip-chip">78251</span><span class="zip-chip">78217</span>
-            <span class="zip-chip">78213</span><span class="zip-chip">78218</span><span class="zip-chip">78250</span>
-            <span class="zip-chip">78239</span><span class="zip-chip">78264</span><span class="zip-chip">78245</span>
-            <span class="zip-chip">78202</span><span class="zip-chip">78109</span><span class="zip-chip">78210</span>
-            <span class="zip-chip">78208</span><span class="zip-chip">78233</span><span class="zip-chip">78252</span>
-            <span class="zip-chip">78073</span><span class="zip-chip">78201</span><span class="zip-chip">78238</span>
-            <span class="zip-chip">78244</span><span class="zip-chip">78112</span><span class="zip-chip">78002</span>
-            <span class="zip-chip">78203</span><span class="zip-chip">78228</span><span class="zip-chip">78101</span>
-            <span class="zip-chip">78222</span><span class="zip-chip">78069</span><span class="zip-chip">78221</span>
-            <span class="zip-chip">78223</span><span class="zip-chip">78224</span>
+          <div class="zip-city-section">
+            <div class="zip-city-label">San Antonio · Bexar County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78254</span><span class="zip-chip">78266</span><span class="zip-chip">78152</span>
+              <span class="zip-chip">78204</span><span class="zip-chip">78240</span><span class="zip-chip">78148</span>
+              <span class="zip-chip">78247</span><span class="zip-chip">78251</span><span class="zip-chip">78217</span>
+              <span class="zip-chip">78213</span><span class="zip-chip">78218</span><span class="zip-chip">78250</span>
+              <span class="zip-chip">78239</span><span class="zip-chip">78264</span><span class="zip-chip">78245</span>
+              <span class="zip-chip">78202</span><span class="zip-chip">78109</span><span class="zip-chip">78210</span>
+              <span class="zip-chip">78208</span><span class="zip-chip">78233</span><span class="zip-chip">78252</span>
+              <span class="zip-chip">78073</span><span class="zip-chip">78201</span><span class="zip-chip">78238</span>
+              <span class="zip-chip">78244</span><span class="zip-chip">78112</span><span class="zip-chip">78002</span>
+              <span class="zip-chip">78203</span><span class="zip-chip">78228</span><span class="zip-chip">78101</span>
+              <span class="zip-chip">78222</span><span class="zip-chip">78069</span><span class="zip-chip">78221</span>
+              <span class="zip-chip">78223</span><span class="zip-chip">78224</span>
+            </div>
+          </div>
+          <div class="zip-city-section">
+            <div class="zip-city-label">Corpus Christi · Nueces County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78404</span><span class="zip-chip">78405</span><span class="zip-chip">78408</span>
+              <span class="zip-chip">78413</span><span class="zip-chip">78415</span><span class="zip-chip">78416</span>
+            </div>
           </div>
         </details>
       </div>
@@ -793,22 +842,28 @@
           <li>First 7 days free</li>
         </ul>
         <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive Real Estate - Tier C Territory" class="btn-gold-full">Claim Your Territory →</a>
-        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
+        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio &amp; Corpus Christi, TX</div>
         <details class="zip-toggle">
           <summary>View available zip codes ▾</summary>
-          <div class="zip-grid">
-            <span class="zip-chip">78219</span><span class="zip-chip">78214</span><span class="zip-chip">78220</span>
-            <span class="zip-chip">78211</span><span class="zip-chip">78237</span><span class="zip-chip">78227</span>
-            <span class="zip-chip">78225</span><span class="zip-chip">78242</span><span class="zip-chip">78226</span>
-            <span class="zip-chip">78207</span>
+          <div class="zip-city-section">
+            <div class="zip-city-label">San Antonio · Bexar County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78219</span><span class="zip-chip">78214</span><span class="zip-chip">78220</span>
+              <span class="zip-chip">78211</span><span class="zip-chip">78237</span><span class="zip-chip">78227</span>
+              <span class="zip-chip">78225</span><span class="zip-chip">78242</span><span class="zip-chip">78226</span>
+              <span class="zip-chip">78207</span>
+            </div>
+          </div>
+          <div class="zip-city-section">
+            <div class="zip-city-label">Corpus Christi · Nueces County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78401</span><span class="zip-chip">78402</span><span class="zip-chip">78407</span>
+              <span class="zip-chip">78409</span><span class="zip-chip">78417</span>
+            </div>
           </div>
         </details>
       </div>
 
-    </div>
-    <div class="cc-callout">
-      <p><strong>Also serving Corpus Christi, TX</strong> (Nueces County) — real estate agent territories available.</p>
-      <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive - Corpus Christi Real Estate Territory" class="btn-outline-full" style="width:auto; padding: 10px 20px;">Contact for Availability →</a>
     </div>
   </div>
 
@@ -835,16 +890,19 @@
         <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
         <details class="zip-toggle">
           <summary>View available zip codes ▾</summary>
-          <div class="zip-grid">
-            <span class="zip-chip">78257</span><span class="zip-chip">78006</span><span class="zip-chip">78209</span>
-            <span class="zip-chip">78256</span><span class="zip-chip">78015</span><span class="zip-chip">78255</span>
-            <span class="zip-chip">78231</span><span class="zip-chip">78261</span><span class="zip-chip">78260</span>
-            <span class="zip-chip">78258</span><span class="zip-chip">78248</span><span class="zip-chip">78023</span>
-            <span class="zip-chip">78212</span><span class="zip-chip">78259</span><span class="zip-chip">78230</span>
-            <span class="zip-chip">78232</span><span class="zip-chip">78154</span><span class="zip-chip">78263</span>
-            <span class="zip-chip">78253</span><span class="zip-chip">78216</span><span class="zip-chip">78249</span>
-            <span class="zip-chip">78229</span><span class="zip-chip">78205</span><span class="zip-chip">78215</span>
-            <span class="zip-chip">78108</span>
+          <div class="zip-city-section">
+            <div class="zip-city-label">San Antonio · Bexar County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78257</span><span class="zip-chip">78006</span><span class="zip-chip">78209</span>
+              <span class="zip-chip">78256</span><span class="zip-chip">78015</span><span class="zip-chip">78255</span>
+              <span class="zip-chip">78231</span><span class="zip-chip">78261</span><span class="zip-chip">78260</span>
+              <span class="zip-chip">78258</span><span class="zip-chip">78248</span><span class="zip-chip">78023</span>
+              <span class="zip-chip">78212</span><span class="zip-chip">78259</span><span class="zip-chip">78230</span>
+              <span class="zip-chip">78232</span><span class="zip-chip">78154</span><span class="zip-chip">78263</span>
+              <span class="zip-chip">78253</span><span class="zip-chip">78216</span><span class="zip-chip">78249</span>
+              <span class="zip-chip">78229</span><span class="zip-chip">78205</span><span class="zip-chip">78215</span>
+              <span class="zip-chip">78108</span>
+            </div>
           </div>
         </details>
       </div>
@@ -869,19 +927,22 @@
         <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
         <details class="zip-toggle">
           <summary>View available zip codes ▾</summary>
-          <div class="zip-grid">
-            <span class="zip-chip">78254</span><span class="zip-chip">78266</span><span class="zip-chip">78152</span>
-            <span class="zip-chip">78204</span><span class="zip-chip">78240</span><span class="zip-chip">78148</span>
-            <span class="zip-chip">78247</span><span class="zip-chip">78251</span><span class="zip-chip">78217</span>
-            <span class="zip-chip">78213</span><span class="zip-chip">78218</span><span class="zip-chip">78250</span>
-            <span class="zip-chip">78239</span><span class="zip-chip">78264</span><span class="zip-chip">78245</span>
-            <span class="zip-chip">78202</span><span class="zip-chip">78109</span><span class="zip-chip">78210</span>
-            <span class="zip-chip">78208</span><span class="zip-chip">78233</span><span class="zip-chip">78252</span>
-            <span class="zip-chip">78073</span><span class="zip-chip">78201</span><span class="zip-chip">78238</span>
-            <span class="zip-chip">78244</span><span class="zip-chip">78112</span><span class="zip-chip">78002</span>
-            <span class="zip-chip">78203</span><span class="zip-chip">78228</span><span class="zip-chip">78101</span>
-            <span class="zip-chip">78222</span><span class="zip-chip">78069</span><span class="zip-chip">78221</span>
-            <span class="zip-chip">78223</span><span class="zip-chip">78224</span>
+          <div class="zip-city-section">
+            <div class="zip-city-label">San Antonio · Bexar County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78254</span><span class="zip-chip">78266</span><span class="zip-chip">78152</span>
+              <span class="zip-chip">78204</span><span class="zip-chip">78240</span><span class="zip-chip">78148</span>
+              <span class="zip-chip">78247</span><span class="zip-chip">78251</span><span class="zip-chip">78217</span>
+              <span class="zip-chip">78213</span><span class="zip-chip">78218</span><span class="zip-chip">78250</span>
+              <span class="zip-chip">78239</span><span class="zip-chip">78264</span><span class="zip-chip">78245</span>
+              <span class="zip-chip">78202</span><span class="zip-chip">78109</span><span class="zip-chip">78210</span>
+              <span class="zip-chip">78208</span><span class="zip-chip">78233</span><span class="zip-chip">78252</span>
+              <span class="zip-chip">78073</span><span class="zip-chip">78201</span><span class="zip-chip">78238</span>
+              <span class="zip-chip">78244</span><span class="zip-chip">78112</span><span class="zip-chip">78002</span>
+              <span class="zip-chip">78203</span><span class="zip-chip">78228</span><span class="zip-chip">78101</span>
+              <span class="zip-chip">78222</span><span class="zip-chip">78069</span><span class="zip-chip">78221</span>
+              <span class="zip-chip">78223</span><span class="zip-chip">78224</span>
+            </div>
           </div>
         </details>
       </div>
@@ -905,11 +966,14 @@
         <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
         <details class="zip-toggle">
           <summary>View available zip codes ▾</summary>
-          <div class="zip-grid">
-            <span class="zip-chip">78219</span><span class="zip-chip">78214</span><span class="zip-chip">78220</span>
-            <span class="zip-chip">78211</span><span class="zip-chip">78237</span><span class="zip-chip">78227</span>
-            <span class="zip-chip">78225</span><span class="zip-chip">78242</span><span class="zip-chip">78226</span>
-            <span class="zip-chip">78207</span>
+          <div class="zip-city-section">
+            <div class="zip-city-label">San Antonio · Bexar County</div>
+            <div class="zip-grid">
+              <span class="zip-chip">78219</span><span class="zip-chip">78214</span><span class="zip-chip">78220</span>
+              <span class="zip-chip">78211</span><span class="zip-chip">78237</span><span class="zip-chip">78227</span>
+              <span class="zip-chip">78225</span><span class="zip-chip">78242</span><span class="zip-chip">78226</span>
+              <span class="zip-chip">78207</span>
+            </div>
           </div>
         </details>
       </div>
