@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LeadHive — Exclusive Reverse Mortgage Leads, San Antonio</title>
+  <title>LeadHive — Exclusive AI-Scored Leads for Texas Professionals</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -87,7 +87,7 @@
     .hero p {
       font-size: 1.2rem;
       color: var(--muted);
-      max-width: 620px;
+      max-width: 640px;
       margin: 0 auto 40px;
     }
     .btn-primary {
@@ -101,9 +101,21 @@
       transition: background 0.2s, transform 0.1s;
     }
     .btn-primary:hover { background: var(--gold2); transform: translateY(-1px); }
-    .hero-sub {
-      margin-top: 20px;
-      font-size: 0.85rem;
+    .hero-sub { margin-top: 20px; font-size: 0.85rem; color: var(--muted); }
+    .niche-pills {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .niche-pill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
       color: var(--muted);
     }
 
@@ -228,6 +240,37 @@
     .feature h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
     .feature p { color: var(--muted); font-size: 0.9rem; }
 
+    /* ── NICHE TABS ── */
+    .tab-bar-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+    .tab-bar {
+      display: flex;
+      gap: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 6px;
+    }
+    .tab-btn {
+      padding: 10px 24px;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { background: var(--gold); color: var(--navy); }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+
     /* ── TERRITORY COUNTER ── */
     .territory-counter {
       display: inline-flex;
@@ -250,23 +293,11 @@
       background: currentColor;
       flex-shrink: 0;
     }
-    .territory-counter.low {
-      background: rgba(255,140,0,0.12);
-      color: #ff8c00;
-      border-color: rgba(255,140,0,0.25);
-    }
-    .territory-counter.critical {
-      background: rgba(220,50,50,0.12);
-      color: #dc3232;
-      border-color: rgba(220,50,50,0.25);
-    }
+    .territory-counter.low { background: rgba(255,140,0,0.12); color: #ff8c00; border-color: rgba(255,140,0,0.25); }
+    .territory-counter.critical { background: rgba(220,50,50,0.12); color: #dc3232; border-color: rgba(220,50,50,0.25); }
 
     /* ── ZIP TOGGLE ── */
-    .zip-toggle {
-      margin-top: 20px;
-      border-top: 1px solid var(--border);
-      padding-top: 16px;
-    }
+    .zip-toggle { margin-top: 20px; border-top: 1px solid var(--border); padding-top: 16px; }
     .zip-toggle summary {
       cursor: pointer;
       font-size: 0.8rem;
@@ -278,14 +309,9 @@
     }
     .zip-toggle summary::-webkit-details-marker { display: none; }
     .zip-toggle[open] summary { color: var(--gold); }
-    .zip-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
+    .zip-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
     .zip-chip {
-      background: var(--bg);
+      background: var(--navy2);
       border: 1px solid var(--border);
       border-radius: 6px;
       padding: 4px 10px;
@@ -295,7 +321,7 @@
       font-family: monospace;
     }
 
-    /* ── PRICING ── */
+    /* ── PRICING GRID ── */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -312,10 +338,7 @@
       display: flex;
       flex-direction: column;
     }
-    .pricing-card.featured {
-      border-color: var(--gold);
-      position: relative;
-    }
+    .pricing-card.featured { border-color: var(--gold); position: relative; }
     .pricing-badge {
       position: absolute;
       top: -14px;
@@ -373,12 +396,27 @@
     .btn-outline-full:hover { background: var(--gold); color: var(--navy); }
     .pricing-note { font-size: 0.78rem; color: var(--muted); margin-top: 14px; }
 
+    /* ── CORPUS CHRISTI CALLOUT ── */
+    .cc-callout {
+      max-width: 1000px;
+      margin: 32px auto 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cc-callout p { color: var(--muted); font-size: 0.9rem; }
+    .cc-callout strong { color: var(--text); }
+    .cc-callout a { font-weight: 700; font-size: 0.9rem; }
+
     /* ── FAQ ── */
     .faq-list { max-width: 720px; }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 24px 0;
-    }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; }
     .faq-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
     .faq-item p { color: var(--muted); font-size: 0.95rem; }
 
@@ -394,6 +432,7 @@
 
     @media (max-width: 900px) {
       .pricing-grid { grid-template-columns: 1fr; max-width: 480px; }
+      .tab-btn { padding: 10px 14px; font-size: 0.82rem; }
     }
     @media (max-width: 600px) {
       nav { padding: 16px 20px; }
@@ -401,6 +440,7 @@
       .hero { padding: 60px 20px; }
       .stats-bar { padding: 32px 20px; }
       .pricing-card { padding: 32px 24px; }
+      .cc-callout { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -414,19 +454,24 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="badge">🐝 San Antonio, TX — Limited Territories Available</div>
-  <h1>15 Exclusive Reverse Mortgage Leads.<br><span>Every Morning. Your Territory Only.</span></h1>
-  <p>AI-scored leads from Bexar County public property records — delivered to your Google Sheet before you wake up. No shared leads. No contracts. Cancel anytime.</p>
+  <div class="badge">San Antonio & Corpus Christi, TX — Limited Territories</div>
+  <h1>Exclusive AI-Scored Leads.<br><span>Every Morning. Your Territory Only.</span></h1>
+  <p>15 verified, AI-scored leads delivered to your Google Sheet before you wake up — for reverse mortgage, real estate, and Medicare professionals. No shared leads. No contracts.</p>
   <a href="#pricing" class="btn-primary">Claim Your Territory →</a>
-  <div class="hero-sub">⚡ Setup within 24 hours &nbsp;·&nbsp; 🔒 Exclusive zip codes &nbsp;·&nbsp; 📊 AI-scored 1–100</div>
+  <div class="niche-pills">
+    <span class="niche-pill">🏦 Reverse Mortgage</span>
+    <span class="niche-pill">🏠 Real Estate</span>
+    <span class="niche-pill">💊 Medicare Insurance</span>
+  </div>
+  <div class="hero-sub" style="margin-top:16px;">⚡ Setup within 24 hours &nbsp;·&nbsp; 🔒 Exclusive zip codes &nbsp;·&nbsp; 📊 AI-scored 1–100</div>
 </div>
 
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="inner">
     <div>
-      <div class="stat-num">80,000+</div>
-      <div class="stat-label">Confirmed 65+ homeowners in Bexar County</div>
+      <div class="stat-num">170K+</div>
+      <div class="stat-label">Verified 65+ homeowners across Bexar & Nueces County</div>
     </div>
     <div>
       <div class="stat-num">15</div>
@@ -452,12 +497,12 @@
     <div class="step">
       <div class="step-num">1</div>
       <h3>We pull the data</h3>
-      <p>Every confirmed 65+ homeowner in your territory is pulled daily from Bexar County public property records — no guesswork, just verified OV65 exemption holders.</p>
+      <p>Every qualified prospect in your territory is pulled daily from public county appraisal records — verified homeowners with the signals your niche depends on.</p>
     </div>
     <div class="step">
       <div class="step-num">2</div>
       <h3>AI scores every lead</h3>
-      <p>Our AI analyzes each prospect — home equity, ownership tenure, property value — and scores them 1–100 with grade A through D so you know exactly who to call first.</p>
+      <p>Our AI analyzes each prospect — home equity, ownership tenure, property value — and scores them 1–100 with grade A through D so you know exactly who to contact first.</p>
     </div>
     <div class="step">
       <div class="step-num">3</div>
@@ -474,20 +519,20 @@
   <p class="section-sub">Every lead comes fully scored with context and a ready-to-use opening line.</p>
   <div class="lead-card">
     <div class="lead-card-header">
-      <div><strong>Maria G.</strong> &nbsp;·&nbsp; Delivered 2026-05-25</div>
+      <div><strong>Maria G.</strong> &nbsp;·&nbsp; Delivered 2026-05-28</div>
       <div class="grade-badge b">B &nbsp; 82/100</div>
     </div>
     <div class="lead-card-body">
       <div class="score-bar-wrap">
         <div class="score-bar-bg"><div class="score-bar-fill" style="width:82%"></div></div>
-        <div class="score-label"><span>Score: 82/100</span><span>AEP Priority</span></div>
+        <div class="score-label"><span>Score: 82/100</span><span>Strong Signal</span></div>
       </div>
       <div class="lead-row"><span class="lbl">Address</span><span class="val">North San Antonio, TX 78258</span></div>
-      <div class="lead-row"><span class="lbl">Age</span><span class="val">68</span></div>
+      <div class="lead-row"><span class="lbl">Age</span><span class="val">68 (OV65 confirmed)</span></div>
       <div class="lead-row"><span class="lbl">Home Value</span><span class="val">$412,000</span></div>
       <div class="lead-row"><span class="lbl">Years in Home</span><span class="val">21 years</span></div>
       <div class="lead-row"><span class="lbl">Urgency</span><span class="val">High equity, long-term homeowner</span></div>
-      <div class="lead-row"><span class="lbl">Opening Line</span><span class="val">"Maria, homeowners in your area with your equity profile are often surprised at what a reverse mortgage frees up…"</span></div>
+      <div class="lead-row"><span class="lbl">Opening Line</span><span class="val">"Maria, homeowners in your area with your equity profile often have options they haven't considered…"</span></div>
       <div class="lead-row"><span class="lbl">Skip Trace</span><span class="val"><a href="#">Look Up →</a></span></div>
     </div>
   </div>
@@ -502,7 +547,7 @@
     <div class="feature">
       <div class="feature-icon">📍</div>
       <h3>Exclusive Territory</h3>
-      <p>Your zip codes are locked to you. No other broker on LeadHive will ever receive the same leads.</p>
+      <p>Your zip codes are locked to you. No other professional on LeadHive will ever receive the same leads.</p>
     </div>
     <div class="feature">
       <div class="feature-icon">🤖</div>
@@ -512,7 +557,7 @@
     <div class="feature">
       <div class="feature-icon">📝</div>
       <h3>Outreach Scripts</h3>
-      <p>Cold call, voicemail, text, and mailer copy written per lead. Show up to every call prepared.</p>
+      <p>Cold call, voicemail, text, and mailer copy written per lead — tailored to your niche and their situation.</p>
     </div>
     <div class="feature">
       <div class="feature-icon">📊</div>
@@ -527,122 +572,351 @@
     <div class="feature">
       <div class="feature-icon">⚡</div>
       <h3>Daily Fresh Leads</h3>
-      <p>15 new leads every morning. Never call the same person twice — our system deduplicates automatically.</p>
+      <p>15 new leads every morning. Never contact the same person twice — our system deduplicates automatically.</p>
     </div>
   </div>
 </section>
 
 <!-- PRICING -->
 <section id="pricing">
-  <div style="text-align:center; margin-bottom: 56px;">
+  <div style="text-align:center; margin-bottom: 40px;">
     <div class="section-label" style="justify-content:center; display:flex;">Pricing</div>
-    <h2 class="section-title">One closed loan pays for 5 years.</h2>
+    <h2 class="section-title" id="pricing-headline">One closed loan pays for 5 years.</h2>
     <p class="section-sub" style="margin: 0 auto;">No setup fees. No long-term contracts. Cancel anytime.</p>
   </div>
-  <div class="pricing-grid">
 
-    <!-- TIER A -->
-    <div class="pricing-card" style="position:relative;">
-      <div class="pricing-tier">Tier A — Premium</div>
-      <div class="territory-counter">8 of 8 territories available</div>
-      <div class="price">$499<span>/mo</span></div>
-      <div class="desc">Avg home value $350K+ · High-equity territory · 3 exclusive zip codes</div>
-      <ul class="check-list">
-        <li>15 AI-scored leads delivered every morning</li>
-        <li>3 exclusive zip codes — never shared</li>
-        <li>AI outreach scripts (A &amp; B grades)</li>
-        <li>Google Sheet delivery with skip trace links</li>
-        <li>Fully deduplicated — no repeats</li>
-        <li>Reply to receipt email with your 3 preferred zip codes</li>
-        <li>Google Sheet live within 24 hours of zip selection</li>
-        <li>First 7 days free</li>
-      </ul>
-      <a href="https://buy.stripe.com/aFa8wPeYbaVj32tc4r7wA01" class="btn-gold-full">Claim Your Territory →</a>
-      <div class="pricing-note">Secure payment via Stripe · Limited territories · San Antonio, TX</div>
-      <details class="zip-toggle">
-        <summary>View available zip codes ▾</summary>
-        <div class="zip-grid">
-          <span class="zip-chip">78257</span><span class="zip-chip">78006</span><span class="zip-chip">78209</span>
-          <span class="zip-chip">78256</span><span class="zip-chip">78015</span><span class="zip-chip">78255</span>
-          <span class="zip-chip">78231</span><span class="zip-chip">78261</span><span class="zip-chip">78260</span>
-          <span class="zip-chip">78258</span><span class="zip-chip">78248</span><span class="zip-chip">78023</span>
-          <span class="zip-chip">78212</span><span class="zip-chip">78259</span><span class="zip-chip">78230</span>
-          <span class="zip-chip">78232</span><span class="zip-chip">78154</span><span class="zip-chip">78263</span>
-          <span class="zip-chip">78253</span><span class="zip-chip">78216</span><span class="zip-chip">78249</span>
-          <span class="zip-chip">78229</span><span class="zip-chip">78205</span><span class="zip-chip">78215</span>
-          <span class="zip-chip">78108</span>
-        </div>
-      </details>
+  <!-- TAB BAR -->
+  <div class="tab-bar-wrap">
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="revmort" onclick="switchTab('revmort')">Reverse Mortgage</button>
+      <button class="tab-btn" data-tab="realestate" onclick="switchTab('realestate')">Real Estate</button>
+      <button class="tab-btn" data-tab="medicare" onclick="switchTab('medicare')">Medicare</button>
     </div>
-
-    <!-- TIER B (featured) -->
-    <div class="pricing-card featured" style="position:relative;">
-      <div class="pricing-badge">MOST POPULAR</div>
-      <div class="pricing-tier">Tier B — Standard</div>
-      <div class="territory-counter">11 of 11 territories available</div>
-      <div class="price">$299<span>/mo</span></div>
-      <div class="desc">Avg home value $200–350K · Strong territory · 3 exclusive zip codes</div>
-      <ul class="check-list">
-        <li>15 AI-scored leads delivered every morning</li>
-        <li>3 exclusive zip codes — never shared</li>
-        <li>AI outreach scripts (A &amp; B grades)</li>
-        <li>Google Sheet delivery with skip trace links</li>
-        <li>Fully deduplicated — no repeats</li>
-        <li>Reply to receipt email with your 3 preferred zip codes</li>
-        <li>Google Sheet live within 24 hours of zip selection</li>
-        <li>First 7 days free</li>
-      </ul>
-      <a href="https://buy.stripe.com/9B63cvaHV2oNfPf0lJ7wA00" class="btn-gold-full">Claim Your Territory →</a>
-      <div class="pricing-note">Secure payment via Stripe · Limited territories · San Antonio, TX</div>
-      <details class="zip-toggle">
-        <summary>View available zip codes ▾</summary>
-        <div class="zip-grid">
-          <span class="zip-chip">78254</span><span class="zip-chip">78266</span><span class="zip-chip">78152</span>
-          <span class="zip-chip">78204</span><span class="zip-chip">78240</span><span class="zip-chip">78148</span>
-          <span class="zip-chip">78247</span><span class="zip-chip">78251</span><span class="zip-chip">78217</span>
-          <span class="zip-chip">78213</span><span class="zip-chip">78218</span><span class="zip-chip">78250</span>
-          <span class="zip-chip">78239</span><span class="zip-chip">78264</span><span class="zip-chip">78245</span>
-          <span class="zip-chip">78202</span><span class="zip-chip">78109</span><span class="zip-chip">78210</span>
-          <span class="zip-chip">78208</span><span class="zip-chip">78233</span><span class="zip-chip">78252</span>
-          <span class="zip-chip">78073</span><span class="zip-chip">78201</span><span class="zip-chip">78238</span>
-          <span class="zip-chip">78244</span><span class="zip-chip">78112</span><span class="zip-chip">78002</span>
-          <span class="zip-chip">78203</span><span class="zip-chip">78228</span><span class="zip-chip">78101</span>
-          <span class="zip-chip">78222</span><span class="zip-chip">78069</span><span class="zip-chip">78221</span>
-          <span class="zip-chip">78223</span><span class="zip-chip">78224</span>
-        </div>
-      </details>
-    </div>
-
-    <!-- TIER C -->
-    <div class="pricing-card" style="position:relative;">
-      <div class="pricing-tier">Tier C — Starter</div>
-      <div class="territory-counter">3 of 3 territories available</div>
-      <div class="price">$99<span>/mo</span></div>
-      <div class="desc">Avg home value under $200K · Value territory · 3 exclusive zip codes</div>
-      <ul class="check-list">
-        <li>15 AI-scored leads delivered every morning</li>
-        <li>3 exclusive zip codes — never shared</li>
-        <li>AI outreach scripts (A &amp; B grades)</li>
-        <li>Google Sheet delivery with skip trace links</li>
-        <li>Fully deduplicated — no repeats</li>
-        <li>Reply to receipt email with your 3 preferred zip codes</li>
-        <li>Google Sheet live within 24 hours of zip selection</li>
-        <li>First 7 days free</li>
-      </ul>
-      <a href="https://buy.stripe.com/28E8wP7vJ4wVauV9Wj7wA02" class="btn-gold-full">Claim Your Territory →</a>
-      <div class="pricing-note">Secure payment via Stripe · Limited territories · San Antonio, TX</div>
-      <details class="zip-toggle">
-        <summary>View available zip codes ▾</summary>
-        <div class="zip-grid">
-          <span class="zip-chip">78219</span><span class="zip-chip">78214</span><span class="zip-chip">78220</span>
-          <span class="zip-chip">78211</span><span class="zip-chip">78237</span><span class="zip-chip">78227</span>
-          <span class="zip-chip">78225</span><span class="zip-chip">78242</span><span class="zip-chip">78226</span>
-          <span class="zip-chip">78207</span>
-        </div>
-      </details>
-    </div>
-
   </div>
+
+  <!-- ── REVERSE MORTGAGE TAB ── -->
+  <div class="tab-pane active" id="tab-revmort">
+    <div class="pricing-grid">
+
+      <div class="pricing-card" style="position:relative;">
+        <div class="pricing-tier">Tier A — Premium</div>
+        <div class="territory-counter">8 of 8 territories available</div>
+        <div class="price">$499<span>/mo</span></div>
+        <div class="desc">Avg home value $350K+ · High-equity territory · 3 exclusive zip codes</div>
+        <ul class="check-list">
+          <li>15 AI-scored leads every morning</li>
+          <li>3 exclusive zip codes — never shared</li>
+          <li>AI outreach scripts (A &amp; B grades)</li>
+          <li>Google Sheet delivery with skip trace links</li>
+          <li>Fully deduplicated — no repeats</li>
+          <li>Reply to receipt with your 3 preferred zip codes</li>
+          <li>Sheet live within 24 hours of zip selection</li>
+          <li>First 7 days free</li>
+        </ul>
+        <a href="https://buy.stripe.com/aFa8wPeYbaVj32tc4r7wA01" class="btn-gold-full">Claim Your Territory →</a>
+        <div class="pricing-note">Secure payment via Stripe · San Antonio, TX</div>
+        <details class="zip-toggle">
+          <summary>View available zip codes ▾</summary>
+          <div class="zip-grid">
+            <span class="zip-chip">78257</span><span class="zip-chip">78006</span><span class="zip-chip">78209</span>
+            <span class="zip-chip">78256</span><span class="zip-chip">78015</span><span class="zip-chip">78255</span>
+            <span class="zip-chip">78231</span><span class="zip-chip">78261</span><span class="zip-chip">78260</span>
+            <span class="zip-chip">78258</span><span class="zip-chip">78248</span><span class="zip-chip">78023</span>
+            <span class="zip-chip">78212</span><span class="zip-chip">78259</span><span class="zip-chip">78230</span>
+            <span class="zip-chip">78232</span><span class="zip-chip">78154</span><span class="zip-chip">78263</span>
+            <span class="zip-chip">78253</span><span class="zip-chip">78216</span><span class="zip-chip">78249</span>
+            <span class="zip-chip">78229</span><span class="zip-chip">78205</span><span class="zip-chip">78215</span>
+            <span class="zip-chip">78108</span>
+          </div>
+        </details>
+      </div>
+
+      <div class="pricing-card featured" style="position:relative;">
+        <div class="pricing-badge">MOST POPULAR</div>
+        <div class="pricing-tier">Tier B — Standard</div>
+        <div class="territory-counter">11 of 11 territories available</div>
+        <div class="price">$299<span>/mo</span></div>
+        <div class="desc">Avg home value $200–350K · Strong territory · 3 exclusive zip codes</div>
+        <ul class="check-list">
+          <li>15 AI-scored leads every morning</li>
+          <li>3 exclusive zip codes — never shared</li>
+          <li>AI outreach scripts (A &amp; B grades)</li>
+          <li>Google Sheet delivery with skip trace links</li>
+          <li>Fully deduplicated — no repeats</li>
+          <li>Reply to receipt with your 3 preferred zip codes</li>
+          <li>Sheet live within 24 hours of zip selection</li>
+          <li>First 7 days free</li>
+        </ul>
+        <a href="https://buy.stripe.com/9B63cvaHV2oNfPf0lJ7wA00" class="btn-gold-full">Claim Your Territory →</a>
+        <div class="pricing-note">Secure payment via Stripe · San Antonio, TX</div>
+        <details class="zip-toggle">
+          <summary>View available zip codes ▾</summary>
+          <div class="zip-grid">
+            <span class="zip-chip">78254</span><span class="zip-chip">78266</span><span class="zip-chip">78152</span>
+            <span class="zip-chip">78204</span><span class="zip-chip">78240</span><span class="zip-chip">78148</span>
+            <span class="zip-chip">78247</span><span class="zip-chip">78251</span><span class="zip-chip">78217</span>
+            <span class="zip-chip">78213</span><span class="zip-chip">78218</span><span class="zip-chip">78250</span>
+            <span class="zip-chip">78239</span><span class="zip-chip">78264</span><span class="zip-chip">78245</span>
+            <span class="zip-chip">78202</span><span class="zip-chip">78109</span><span class="zip-chip">78210</span>
+            <span class="zip-chip">78208</span><span class="zip-chip">78233</span><span class="zip-chip">78252</span>
+            <span class="zip-chip">78073</span><span class="zip-chip">78201</span><span class="zip-chip">78238</span>
+            <span class="zip-chip">78244</span><span class="zip-chip">78112</span><span class="zip-chip">78002</span>
+            <span class="zip-chip">78203</span><span class="zip-chip">78228</span><span class="zip-chip">78101</span>
+            <span class="zip-chip">78222</span><span class="zip-chip">78069</span><span class="zip-chip">78221</span>
+            <span class="zip-chip">78223</span><span class="zip-chip">78224</span>
+          </div>
+        </details>
+      </div>
+
+      <div class="pricing-card" style="position:relative;">
+        <div class="pricing-tier">Tier C — Starter</div>
+        <div class="territory-counter">3 of 3 territories available</div>
+        <div class="price">$99<span>/mo</span></div>
+        <div class="desc">Avg home value under $200K · Value territory · 3 exclusive zip codes</div>
+        <ul class="check-list">
+          <li>15 AI-scored leads every morning</li>
+          <li>3 exclusive zip codes — never shared</li>
+          <li>AI outreach scripts (A &amp; B grades)</li>
+          <li>Google Sheet delivery with skip trace links</li>
+          <li>Fully deduplicated — no repeats</li>
+          <li>Reply to receipt with your 3 preferred zip codes</li>
+          <li>Sheet live within 24 hours of zip selection</li>
+          <li>First 7 days free</li>
+        </ul>
+        <a href="https://buy.stripe.com/28E8wP7vJ4wVauV9Wj7wA02" class="btn-gold-full">Claim Your Territory →</a>
+        <div class="pricing-note">Secure payment via Stripe · San Antonio, TX</div>
+        <details class="zip-toggle">
+          <summary>View available zip codes ▾</summary>
+          <div class="zip-grid">
+            <span class="zip-chip">78219</span><span class="zip-chip">78214</span><span class="zip-chip">78220</span>
+            <span class="zip-chip">78211</span><span class="zip-chip">78237</span><span class="zip-chip">78227</span>
+            <span class="zip-chip">78225</span><span class="zip-chip">78242</span><span class="zip-chip">78226</span>
+            <span class="zip-chip">78207</span>
+          </div>
+        </details>
+      </div>
+
+    </div>
+    <div class="cc-callout">
+      <p><strong>Also serving Corpus Christi, TX</strong> (Nueces County) — reverse mortgage territories available.</p>
+      <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive - Corpus Christi Reverse Mortgage Territory" class="btn-outline-full" style="width:auto; padding: 10px 20px;">Contact for Availability →</a>
+    </div>
+  </div>
+
+  <!-- ── REAL ESTATE TAB ── -->
+  <div class="tab-pane" id="tab-realestate">
+    <div class="pricing-grid">
+
+      <div class="pricing-card" style="position:relative;">
+        <div class="pricing-tier">Tier A — Premium</div>
+        <div class="territory-counter">8 of 8 territories available</div>
+        <div class="price">$499<span>/mo</span></div>
+        <div class="desc">High-value absentee owners · Motivated seller territory · 3 exclusive zip codes</div>
+        <ul class="check-list">
+          <li>15 AI-scored leads every morning</li>
+          <li>3 exclusive zip codes — never shared</li>
+          <li>AI outreach scripts (A &amp; B grades)</li>
+          <li>Google Sheet delivery with skip trace links</li>
+          <li>Fully deduplicated — no repeats</li>
+          <li>Reply to receipt with your 3 preferred zip codes</li>
+          <li>Sheet live within 24 hours of zip selection</li>
+          <li>First 7 days free</li>
+        </ul>
+        <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive Real Estate - Tier A Territory" class="btn-gold-full">Claim Your Territory →</a>
+        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
+        <details class="zip-toggle">
+          <summary>View available zip codes ▾</summary>
+          <div class="zip-grid">
+            <span class="zip-chip">78257</span><span class="zip-chip">78006</span><span class="zip-chip">78209</span>
+            <span class="zip-chip">78256</span><span class="zip-chip">78015</span><span class="zip-chip">78255</span>
+            <span class="zip-chip">78231</span><span class="zip-chip">78261</span><span class="zip-chip">78260</span>
+            <span class="zip-chip">78258</span><span class="zip-chip">78248</span><span class="zip-chip">78023</span>
+            <span class="zip-chip">78212</span><span class="zip-chip">78259</span><span class="zip-chip">78230</span>
+            <span class="zip-chip">78232</span><span class="zip-chip">78154</span><span class="zip-chip">78263</span>
+            <span class="zip-chip">78253</span><span class="zip-chip">78216</span><span class="zip-chip">78249</span>
+            <span class="zip-chip">78229</span><span class="zip-chip">78205</span><span class="zip-chip">78215</span>
+            <span class="zip-chip">78108</span>
+          </div>
+        </details>
+      </div>
+
+      <div class="pricing-card featured" style="position:relative;">
+        <div class="pricing-badge">MOST POPULAR</div>
+        <div class="pricing-tier">Tier B — Standard</div>
+        <div class="territory-counter">11 of 11 territories available</div>
+        <div class="price">$299<span>/mo</span></div>
+        <div class="desc">Strong absentee owner concentration · Active investor territory · 3 exclusive zip codes</div>
+        <ul class="check-list">
+          <li>15 AI-scored leads every morning</li>
+          <li>3 exclusive zip codes — never shared</li>
+          <li>AI outreach scripts (A &amp; B grades)</li>
+          <li>Google Sheet delivery with skip trace links</li>
+          <li>Fully deduplicated — no repeats</li>
+          <li>Reply to receipt with your 3 preferred zip codes</li>
+          <li>Sheet live within 24 hours of zip selection</li>
+          <li>First 7 days free</li>
+        </ul>
+        <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive Real Estate - Tier B Territory" class="btn-gold-full">Claim Your Territory →</a>
+        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
+        <details class="zip-toggle">
+          <summary>View available zip codes ▾</summary>
+          <div class="zip-grid">
+            <span class="zip-chip">78254</span><span class="zip-chip">78266</span><span class="zip-chip">78152</span>
+            <span class="zip-chip">78204</span><span class="zip-chip">78240</span><span class="zip-chip">78148</span>
+            <span class="zip-chip">78247</span><span class="zip-chip">78251</span><span class="zip-chip">78217</span>
+            <span class="zip-chip">78213</span><span class="zip-chip">78218</span><span class="zip-chip">78250</span>
+            <span class="zip-chip">78239</span><span class="zip-chip">78264</span><span class="zip-chip">78245</span>
+            <span class="zip-chip">78202</span><span class="zip-chip">78109</span><span class="zip-chip">78210</span>
+            <span class="zip-chip">78208</span><span class="zip-chip">78233</span><span class="zip-chip">78252</span>
+            <span class="zip-chip">78073</span><span class="zip-chip">78201</span><span class="zip-chip">78238</span>
+            <span class="zip-chip">78244</span><span class="zip-chip">78112</span><span class="zip-chip">78002</span>
+            <span class="zip-chip">78203</span><span class="zip-chip">78228</span><span class="zip-chip">78101</span>
+            <span class="zip-chip">78222</span><span class="zip-chip">78069</span><span class="zip-chip">78221</span>
+            <span class="zip-chip">78223</span><span class="zip-chip">78224</span>
+          </div>
+        </details>
+      </div>
+
+      <div class="pricing-card" style="position:relative;">
+        <div class="pricing-tier">Tier C — Starter</div>
+        <div class="territory-counter">3 of 3 territories available</div>
+        <div class="price">$99<span>/mo</span></div>
+        <div class="desc">Value market · High volume absentee owners · 3 exclusive zip codes</div>
+        <ul class="check-list">
+          <li>15 AI-scored leads every morning</li>
+          <li>3 exclusive zip codes — never shared</li>
+          <li>AI outreach scripts (A &amp; B grades)</li>
+          <li>Google Sheet delivery with skip trace links</li>
+          <li>Fully deduplicated — no repeats</li>
+          <li>Reply to receipt with your 3 preferred zip codes</li>
+          <li>Sheet live within 24 hours of zip selection</li>
+          <li>First 7 days free</li>
+        </ul>
+        <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive Real Estate - Tier C Territory" class="btn-gold-full">Claim Your Territory →</a>
+        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
+        <details class="zip-toggle">
+          <summary>View available zip codes ▾</summary>
+          <div class="zip-grid">
+            <span class="zip-chip">78219</span><span class="zip-chip">78214</span><span class="zip-chip">78220</span>
+            <span class="zip-chip">78211</span><span class="zip-chip">78237</span><span class="zip-chip">78227</span>
+            <span class="zip-chip">78225</span><span class="zip-chip">78242</span><span class="zip-chip">78226</span>
+            <span class="zip-chip">78207</span>
+          </div>
+        </details>
+      </div>
+
+    </div>
+    <div class="cc-callout">
+      <p><strong>Also serving Corpus Christi, TX</strong> (Nueces County) — real estate agent territories available.</p>
+      <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive - Corpus Christi Real Estate Territory" class="btn-outline-full" style="width:auto; padding: 10px 20px;">Contact for Availability →</a>
+    </div>
+  </div>
+
+  <!-- ── MEDICARE TAB ── -->
+  <div class="tab-pane" id="tab-medicare">
+    <div class="pricing-grid">
+
+      <div class="pricing-card" style="position:relative;">
+        <div class="pricing-tier">Tier A — Premium</div>
+        <div class="territory-counter">8 of 8 territories available</div>
+        <div class="price">$299<span>/mo</span></div>
+        <div class="desc">Avg home value $350K+ · High-income seniors · 3 exclusive zip codes</div>
+        <ul class="check-list">
+          <li>15 AI-scored leads every morning</li>
+          <li>3 exclusive zip codes — never shared</li>
+          <li>AI outreach scripts — AEP & plan review focused</li>
+          <li>Google Sheet delivery with skip trace links</li>
+          <li>Fully deduplicated — no repeats</li>
+          <li>Reply to receipt with your 3 preferred zip codes</li>
+          <li>Sheet live within 24 hours of zip selection</li>
+          <li>First 7 days free</li>
+        </ul>
+        <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive Medicare - Tier A Territory" class="btn-gold-full">Claim Your Territory →</a>
+        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
+        <details class="zip-toggle">
+          <summary>View available zip codes ▾</summary>
+          <div class="zip-grid">
+            <span class="zip-chip">78257</span><span class="zip-chip">78006</span><span class="zip-chip">78209</span>
+            <span class="zip-chip">78256</span><span class="zip-chip">78015</span><span class="zip-chip">78255</span>
+            <span class="zip-chip">78231</span><span class="zip-chip">78261</span><span class="zip-chip">78260</span>
+            <span class="zip-chip">78258</span><span class="zip-chip">78248</span><span class="zip-chip">78023</span>
+            <span class="zip-chip">78212</span><span class="zip-chip">78259</span><span class="zip-chip">78230</span>
+            <span class="zip-chip">78232</span><span class="zip-chip">78154</span><span class="zip-chip">78263</span>
+            <span class="zip-chip">78253</span><span class="zip-chip">78216</span><span class="zip-chip">78249</span>
+            <span class="zip-chip">78229</span><span class="zip-chip">78205</span><span class="zip-chip">78215</span>
+            <span class="zip-chip">78108</span>
+          </div>
+        </details>
+      </div>
+
+      <div class="pricing-card featured" style="position:relative;">
+        <div class="pricing-badge">MOST POPULAR</div>
+        <div class="pricing-tier">Tier B — Standard</div>
+        <div class="territory-counter">11 of 11 territories available</div>
+        <div class="price">$199<span>/mo</span></div>
+        <div class="desc">Strong senior concentration · AEP-ready territory · 3 exclusive zip codes</div>
+        <ul class="check-list">
+          <li>15 AI-scored leads every morning</li>
+          <li>3 exclusive zip codes — never shared</li>
+          <li>AI outreach scripts — AEP & plan review focused</li>
+          <li>Google Sheet delivery with skip trace links</li>
+          <li>Fully deduplicated — no repeats</li>
+          <li>Reply to receipt with your 3 preferred zip codes</li>
+          <li>Sheet live within 24 hours of zip selection</li>
+          <li>First 7 days free</li>
+        </ul>
+        <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive Medicare - Tier B Territory" class="btn-gold-full">Claim Your Territory →</a>
+        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
+        <details class="zip-toggle">
+          <summary>View available zip codes ▾</summary>
+          <div class="zip-grid">
+            <span class="zip-chip">78254</span><span class="zip-chip">78266</span><span class="zip-chip">78152</span>
+            <span class="zip-chip">78204</span><span class="zip-chip">78240</span><span class="zip-chip">78148</span>
+            <span class="zip-chip">78247</span><span class="zip-chip">78251</span><span class="zip-chip">78217</span>
+            <span class="zip-chip">78213</span><span class="zip-chip">78218</span><span class="zip-chip">78250</span>
+            <span class="zip-chip">78239</span><span class="zip-chip">78264</span><span class="zip-chip">78245</span>
+            <span class="zip-chip">78202</span><span class="zip-chip">78109</span><span class="zip-chip">78210</span>
+            <span class="zip-chip">78208</span><span class="zip-chip">78233</span><span class="zip-chip">78252</span>
+            <span class="zip-chip">78073</span><span class="zip-chip">78201</span><span class="zip-chip">78238</span>
+            <span class="zip-chip">78244</span><span class="zip-chip">78112</span><span class="zip-chip">78002</span>
+            <span class="zip-chip">78203</span><span class="zip-chip">78228</span><span class="zip-chip">78101</span>
+            <span class="zip-chip">78222</span><span class="zip-chip">78069</span><span class="zip-chip">78221</span>
+            <span class="zip-chip">78223</span><span class="zip-chip">78224</span>
+          </div>
+        </details>
+      </div>
+
+      <div class="pricing-card" style="position:relative;">
+        <div class="pricing-tier">Tier C — Starter</div>
+        <div class="territory-counter">3 of 3 territories available</div>
+        <div class="price">$99<span>/mo</span></div>
+        <div class="desc">Value senior market · High volume territory · 3 exclusive zip codes</div>
+        <ul class="check-list">
+          <li>15 AI-scored leads every morning</li>
+          <li>3 exclusive zip codes — never shared</li>
+          <li>AI outreach scripts — AEP & plan review focused</li>
+          <li>Google Sheet delivery with skip trace links</li>
+          <li>Fully deduplicated — no repeats</li>
+          <li>Reply to receipt with your 3 preferred zip codes</li>
+          <li>Sheet live within 24 hours of zip selection</li>
+          <li>First 7 days free</li>
+        </ul>
+        <a href="mailto:jvillarrealassociates@gmail.com?subject=LeadHive Medicare - Tier C Territory" class="btn-gold-full">Claim Your Territory →</a>
+        <div class="pricing-note">Payment via Stripe upon territory confirmation · San Antonio, TX</div>
+        <details class="zip-toggle">
+          <summary>View available zip codes ▾</summary>
+          <div class="zip-grid">
+            <span class="zip-chip">78219</span><span class="zip-chip">78214</span><span class="zip-chip">78220</span>
+            <span class="zip-chip">78211</span><span class="zip-chip">78237</span><span class="zip-chip">78227</span>
+            <span class="zip-chip">78225</span><span class="zip-chip">78242</span><span class="zip-chip">78226</span>
+            <span class="zip-chip">78207</span>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+
 </section>
 
 <!-- FAQ -->
@@ -651,28 +925,28 @@
   <h2 class="section-title">Common questions.</h2>
   <div class="faq-list">
     <div class="faq-item">
-      <h3>How many brokers share a territory?</h3>
-      <p>Zero. Each territory is 100% exclusive. Once a set of zip codes is claimed, it's closed. We will never sell the same leads to two brokers.</p>
+      <h3>How many people share a territory?</h3>
+      <p>Zero. Each territory is 100% exclusive. Once a set of zip codes is claimed, it's closed. We will never sell the same leads to two professionals in the same niche.</p>
     </div>
     <div class="faq-item">
       <h3>Where does the data come from?</h3>
-      <p>Bexar County Appraisal District public property records. Every lead is a verified homeowner with the Over-65 exemption on file — meaning they're confirmed 65+ and own their home outright or with significant equity.</p>
+      <p>County Appraisal District public property records (Bexar and Nueces County). Every lead is a verified homeowner pulled from public records — no voter rolls or restricted data sources.</p>
     </div>
     <div class="faq-item">
       <h3>How do I receive my leads?</h3>
-      <p>We share a Google Sheet with you. Every morning, 15 fresh scored leads are appended to your sheet. You'll see the date, score, grade, address, AI analysis, and outreach scripts.</p>
+      <p>We share a Google Sheet with you. Every morning, 15 fresh scored leads are appended — date, score, grade, address, AI analysis, outreach scripts, and skip trace links.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I pick my zip codes?</h3>
+      <p>After payment, reply to your receipt email with your 3 preferred zip codes from the available list. Your territory is locked in and your Sheet goes live within 24 hours.</p>
     </div>
     <div class="faq-item">
       <h3>What if I want to cancel?</h3>
-      <p>Cancel anytime — no contracts, no cancellation fees. Your territory reopens for the next broker.</p>
+      <p>Cancel anytime — no contracts, no cancellation fees. Your territory reopens for the next subscriber.</p>
     </div>
     <div class="faq-item">
-      <h3>How quickly can I get started?</h3>
-      <p>After payment you'll receive a receipt email — just reply with your 3 preferred zip codes. Your Google Sheet will be live and your territory locked in within 24 hours.</p>
-    </div>
-    <div class="faq-item">
-      <h3>Are these compliant for reverse mortgage outreach?</h3>
-      <p>All data comes from public property records — no voter rolls or restricted data sources. Always follow RESPA, TCPA, and applicable state regulations in your outreach.</p>
+      <h3>Is this data compliant for outreach?</h3>
+      <p>All data comes from public property records. Always follow TCPA, RESPA (mortgage), CMS guidelines (Medicare), and applicable state regulations in your outreach. Scripts are written with compliance in mind.</p>
     </div>
   </div>
 </section>
@@ -680,9 +954,25 @@
 <!-- FOOTER -->
 <footer>
   <span class="logo">Lead<span style="color:var(--text)">Hive</span></span>
-  <p>Exclusive lead generation for reverse mortgage brokers in San Antonio, TX.</p>
+  <p>Exclusive AI-scored leads for reverse mortgage, real estate, and Medicare professionals in Texas.</p>
   <p style="margin-top:8px;"><a href="mailto:jvillarrealassociates@gmail.com">jvillarrealassociates@gmail.com</a></p>
 </footer>
+
+<script>
+  const headlines = {
+    revmort:    'One closed loan pays for 5 years.',
+    realestate: 'One closed deal pays for 2 years.',
+    medicare:   'One enrollment covers your first month.',
+  };
+
+  function switchTab(tabId) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+    document.querySelector(`.tab-btn[data-tab="${tabId}"]`).classList.add('active');
+    document.getElementById(`tab-${tabId}`).classList.add('active');
+    document.getElementById('pricing-headline').textContent = headlines[tabId];
+  }
+</script>
 
 </body>
 </html>
