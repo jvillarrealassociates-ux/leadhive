@@ -1106,6 +1106,16 @@
     document.getElementById(`tab-${tabId}`).classList.add('active');
     document.getElementById('pricing-headline').textContent = headlines[tabId];
   }
+
+  // Auto-activate tab from URL hash: #hecm → revmort, #realestate, #medicare
+  (function() {
+    const map = { hecm: 'revmort', revmort: 'revmort', realestate: 'realestate', medicare: 'medicare' };
+    const hash = window.location.hash.replace('#', '').toLowerCase();
+    if (map[hash]) {
+      switchTab(map[hash]);
+      document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+    }
+  })();
 </script>
 
 </body>
